@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="refresh" content="30" />
+    <meta name="author" content="lackbfun" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/🥰" />
+    <title>Loading</title>
+    <style>
+      body {
+        min-height: 100vh;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: url("https://fav.farm/🖕") 23.69 4, auto;
+      }
+
+      img {
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      window.oncontextmenu = (e) => {
+        e.preventDefault();
+      };
+      const IMG_LIST = [
+        { title: "Sounds pretty GAY", filename: "but_ok.webp" },
+        { title: "爱他就，给他", filename: "chrysanthemum_olive.webp" },
+        { title: "什么花最好养？", filename: "easy_chrysanthemum.webp" },
+        { title: "GAAAAAAYYYY", filename: "gaaaaaayyyy.gif" },
+        { title: "典", filename: "gay_or_not.webp" },
+        { title: "炭焼ホモ", filename: "grilled_homo.webp" },
+        { title: "女人 彩虹 手", filename: "urgay.gif" },
+        { title: "Bingo!", filename: "urgay_cute.gif" },
+        { title: "你觉得咧", filename: "weird.webp" },
+      ];
+      const random_img = () => {
+        const chosen = IMG_LIST[Math.floor(Math.random() * IMG_LIST.length)];
+        document.title = chosen.title;
+        let img_node = document.createElement("img");
+        img_node.setAttribute("src", `./img/${chosen.filename}`);
+        document.querySelector("div.container").innerHTML = "";
+        document.querySelector("div.container").appendChild(img_node);
+        return "image changed";
+      };
+      random_img();
+    </script>
+  </body>
+</html>
